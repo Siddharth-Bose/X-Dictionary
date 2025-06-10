@@ -15,12 +15,12 @@ function App() {
   const [word, setWord] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     const meaningObj = dictionary.filter((element) => {
       return element.word.toLowerCase() == word.toLowerCase();
     });
-    
-    if (meaningObj.length>0) {
+
+    if (meaningObj.length > 0) {
       setMeaning(meaningObj[0].meaning);
     } else {
       setMeaning("Word not found in the dictionary.");
@@ -37,10 +37,8 @@ function App() {
         onChange={(e) => setWord(e.target.value)}
       />
       <button type="submit">Search</button>
-      <p>
-        <strong>Definition:</strong>
-      </p>
-       <p>{meaning}</p>
+      <h3>Definition:</h3>
+      <p>{meaning}</p>
     </form>
   );
 }
